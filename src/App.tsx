@@ -8,13 +8,16 @@ import { Route, Routes } from 'react-router-dom';
 import Profile from './pages/Profile/profile';
 function App() {
   return (
+    
     <div className="App">
       <Nav></Nav>
-      <LandingIndex></LandingIndex>
-      <Footerindex></Footerindex>
+      
       <Routes>
-        <Route path="../pages/Profile/profile" element={<Profile></Profile>}/>
+        <Route path="/" element={<LandingIndex></LandingIndex>}/>
+        <Route path="/profile" element={<Profile></Profile>}/>
       </Routes>
+
+      <Footerindex></Footerindex>
     </div>
   );
 }

@@ -1,10 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Profile from '../pages/Profile/profile'
 import AuthenticationButton from './authentication-button'
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 function Nav() {
+    const {isAuthenticated} = useAuth0()
     return (
         <div>
           
@@ -49,13 +50,28 @@ function Nav() {
                         <a className="nav-link" href="#contact">Contact</a>
                     </li>
                     <li className="nav-item">
-                        
+                        {isAuthenticated?
+
                         <NavLink
-                            to={"../pages/Profile/profile"}
+                            to={"/profile"}
                             className={'nav-link'}
                         >
                             Profile
-                        </NavLink>
+                        </NavLink> : ' '
+                        
+                        }  
+                    </li>
+                    <li className="nav-item">
+                        {isAuthenticated?
+
+                        <NavLink
+                            to={"/serverresponse"}
+                            className={'nav-link'}
+                        >
+                            Server Res
+                        </NavLink> : ' '
+                        
+                        }  
                     </li>
                     <li className="nav-item">
                         
