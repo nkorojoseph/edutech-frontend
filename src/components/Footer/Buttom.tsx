@@ -7,7 +7,7 @@ const Buttom = () => {
             <div className="bottom py-2 text-light" >
                 <div className="container d-flex justify-content-between">
                     <div>
-                        <p>Copyright © Your name</p>
+                        <p>Relight  © Nkoro Joseph Ahamefula</p>
                     </div>
                     <div>
                         <i className="fab fa-cc-visa fa-lg p-1"></i>

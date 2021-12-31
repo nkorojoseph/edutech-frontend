@@ -11,6 +11,7 @@ import NewsLetter from './NewsLetter';
  const  index =() =>{
     return (
         <div>
+            
             <Home></Home>
             <Information></Information>
             <About></About>
@@ -18,7 +19,7 @@ import NewsLetter from './NewsLetter';
             {/* <Plans></Plans> */}
             <OurWork></OurWork>
             <Testimonial></Testimonial>
-            <NewsLetter></NewsLetter>
+           
         </div>
     )
 }

@@ -4,7 +4,7 @@ import work from '../../assets/images/work.jpg'
 const OurWork = () => {
     return (
         <div>
-            <section className="work d-flex align-items-center py-5" >
+            <section className="work d-flex align-items-center py-5" id='works'>
                 <div className="container-fluid text-light">
                     <div className="row">
                         <div className="col-lg-6 d-flex align-items-center" data-aos="fade-right">

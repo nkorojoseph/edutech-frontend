@@ -15,7 +15,7 @@ function Nav() {
 {/* <!-- <a className="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> --> */}
 
             
-            <a className="navbar-brand logo-text" href="index.html">Relight</a>
+            <a className="navbar-brand logo-text" href={`${process.env.REACT_APP_URL}`}>Relight</a>
 
             <button className="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -24,31 +24,22 @@ function Nav() {
             <div className="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault" >
                 <ul className="navbar-nav ms-auto navbar-nav-scroll">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#header">Home</a>
+                        <a className="nav-link active" aria-current="page" href={`${process.env.REACT_APP_URL}/`}>Home</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#about">About</a>
+                        <a className="nav-link" href={`${process.env.REACT_APP_URL}/#about`}>About</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#services">Services</a>
+                        <a className="nav-link" href={`${process.env.REACT_APP_URL}/#services`}>Services</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#plans">Plans</a>
+                        <a className="nav-link" href={`${process.env.REACT_APP_URL}/#works`}>Our Works</a>
                     </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false" href="#">Drop</a>
-                        
-                        <ul className="dropdown-menu" aria-labelledby="dropdown01">
-                            <li><a className="dropdown-item" href="article.html">Article Details</a></li>
-                            <li><div className="dropdown-divider"></div></li>
-                            <li><a className="dropdown-item" href="terms.html">Terms Conditions</a></li>
-                            <li><div className="dropdown-divider"></div></li>
-                            <li><a className="dropdown-item" href="privacy.html">Privacy Policy</a></li>
-                        </ul>
-                    </li>
+                    
                     <li className="nav-item">
                         <a className="nav-link" href="#contact">Contact</a>
                     </li>
+
                     <li className="nav-item">
                         {isAuthenticated?
 
@@ -61,18 +52,32 @@ function Nav() {
                         
                         }  
                     </li>
-                    <li className="nav-item">
-                        {isAuthenticated?
 
-                        <NavLink
-                            to={"/serverresponse"}
-                            className={'nav-link'}
-                        >
-                            Server Res
-                        </NavLink> : ' '
+                    {
+                        isAuthenticated?
+
+                        <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false" href="#">Products</a>
                         
-                        }  
-                    </li>
+                        <ul className="dropdown-menu" aria-labelledby="dropdown01">
+                            <li>
+                                <NavLink 
+                                    to={"/research_papers"}
+                                    className={'nav-link'}
+                                >
+                                    Research Papers
+                                </NavLink>
+                            </li>
+
+
+                            <li><div className="dropdown-divider"></div></li>
+                            <li><a className="dropdown-item" href="terms.html">Research Articles</a></li>
+                            <li><div className="dropdown-divider"></div></li>
+                            <li><a className="dropdown-item" href="privacy.html">Free Books</a></li>
+                        </ul>
+                    </li> : ''
+                    }
+
                     <li className="nav-item">
                         
                         <AuthenticationButton></AuthenticationButton>

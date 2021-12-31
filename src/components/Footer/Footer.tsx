@@ -8,9 +8,9 @@ const Footer = () => {
                     <div className="row" data-aos="fade-right">
                         <div className="col-lg-3 py-4 py-md-5">
                             <div className="d-flex align-items-center">
-                                <h4 className="">Mirko</h4>
+                                <h4 className="">Relight</h4>
                             </div>
-                            <p className="py-3 para-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus animi repudiandae explicabo esse maxime, impedit rem voluptatibus amet error quas.</p>
+                            <p className="py-3 para-light">Welcome to home of revolutionalized education</p>
                             <div className="d-flex">
                                 <div className="me-3">
                                     <a href="#your-link">
@@ -35,19 +35,19 @@ const Footer = () => {
                                 <h4 className="py-2">Quick Links</h4>
                                 <div className="d-flex align-items-center py-2">
                                     <i className="fas fa-caret-right"></i>
-                                    <a href="#about"><p className="ms-3">About</p></a>
+                                    <a href={`${process.env.REACT_APP_URL}/#about`}><p className="ms-3">About</p></a>
                                 </div>
                                 <div className="d-flex align-items-center py-2">
                                     <i className="fas fa-caret-right"></i>
-                                    <a href="#"><p className="ms-3">Services</p></a>
+                                    <a href={`${process.env.REACT_APP_URL}/#services`}><p className="ms-3">Services</p></a>
                                 </div>
                                 <div className="d-flex align-items-center py-2">
                                     <i className="fas fa-caret-right"></i>
-                                    <a href="#"><p className="ms-3">Plans</p></a>
+                                    <a href={`${process.env.REACT_APP_URL}/#works`}><p className="ms-3">Our works</p></a>
                                 </div>
                                 <div className="d-flex align-items-center py-2">
                                     <i className="fas fa-caret-right"></i>
-                                    <a href="#"><p className="ms-3">Contact</p></a>
+                                    <a href={`${process.env.REACT_APP_URL}/#contact`}><p className="ms-3">Contact</p></a>
                                 </div>
                             </div>
                         </div> 
@@ -75,7 +75,7 @@ const Footer = () => {
                             </div>
                         </div> 
 
-                        <div className="col-lg-3 py-4 py-md-5">
+                        {/* <div className="col-lg-3 py-4 py-md-5">
                             <div className="d-flex align-items-center">
                                 <h4>Newsletter</h4>
                             </div>
@@ -86,7 +86,7 @@ const Footer = () => {
                                     <button className="btn-secondary text-light"><i className="fas fa-envelope fa-lg"></i></button>       
                                 </div>
                             </div>
-                        </div> 
+                        </div>  */}
                     </div> 
                 </div> 
             </section> 

@@ -5,13 +5,12 @@ import { Auth0Provider } from '@auth0/auth0-react';
 const AuthProviderWithHistory = ({ children }:any) => {
   const domain = String (process.env.REACT_APP_AUTH0_DOMAIN);
   const clientId = String (process.env.REACT_APP_AUTH0_CLIENT_ID);
+  const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 
-  console.log(domain, clientId)
-
-  const navigate = useNavigate();
+  const history = useNavigate();
 
   const onRedirectCallback = (appState:any) => {
-    navigate(appState?.returnTo || window.location.pathname);
+    history(appState?.returnTo || window.location.pathname);
   };
 
   return (
@@ -20,6 +19,7 @@ const AuthProviderWithHistory = ({ children }:any) => {
       clientId={clientId}
       redirectUri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
+      audience={audience}
     >
       {children}
     </Auth0Provider>

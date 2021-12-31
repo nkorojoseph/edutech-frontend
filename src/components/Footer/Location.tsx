@@ -10,28 +10,28 @@ const Location = () => {
                             <div className="p-2"><i className="far fa-map fa-3x"></i></div>
                             <div className="ms-2">
                                 <h6>ADDRESS</h6>
-                                <p>Teuku Umar ST. 1919</p>
+                                <p>4 Abebe Arito Lane Ajah, Lagos</p>
                             </div>
                         </div>
                         <div className="col-lg-3 d-flex align-items-center" >
                             <div className="p-2"><i className="fas fa-mobile-alt fa-3x"></i></div>
                             <div className="ms-2">
                                 <h6>CALL FOR QUERY</h6>
-                                <p>(800) 265  216 2020</p>
+                                <p>(070) 3847  2288</p>
                             </div>
                         </div>
                         <div className="col-lg-3 d-flex align-items-center" >
                             <div className="p-2"><i className="far fa-envelope fa-3x"></i></div>
                             <div className="ms-2">
                                 <h6>SEND US MESSAGE</h6>
-                                <p>infodemofile@example.com</p>
+                                <p>nkorojoseph@yahoo.com</p>
                             </div>
                         </div>
                         <div className="col-lg-3 d-flex align-items-center" >
                             <div className="p-2"><i className="far fa-clock fa-3x"></i></div>
                             <div className="ms-2">
                                 <h6>OPENING HOURS</h6>
-                                <p>09:00 AM - 18:00 PM</p>
+                                <p>24hours/day</p>
                             </div>
                         </div>
                     </div>
