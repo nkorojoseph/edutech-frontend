@@ -9,9 +9,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProviderWithHistory from './auth/authProvider';
 import { BrowserRouter as BRouter } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline'
 
 ReactDOM.render(
   <React.StrictMode>
+    <CssBaseline/>
     <BRouter>
       <AuthProviderWithHistory>
         <App />
