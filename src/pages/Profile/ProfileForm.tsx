@@ -44,7 +44,6 @@ const onSubmit = (values:any, onSubmitProps:any) => {
 }
 
 
-
 const ProfileForm = ():any => {
 
     const [formValues, setFormValues] = useState(null)
@@ -60,8 +59,8 @@ const ProfileForm = ():any => {
 
                     <Form>                                  
                         <Row className='mb-3 align-items-center'>
-                            <FormikControl control='input' type='email' label='Email' name='email'/>
-                            <FormikControl control='input' type='password' label='Password' name='password'/>
+                            <FormikControl control='input' type='email' label='Email' name='email' disabled/>
+                            <FormikControl control='input' type='password' label='Password' name='password' disabled/>
                         </Row>
 
                         <Row className='mb-3 align-items-center'>
@@ -69,32 +68,13 @@ const ProfileForm = ():any => {
                             <FormikControl control='input' type='text' label='Lastname' name='lastname'/>
                         </Row>
 
-                        <Row className='mb-3 align-items-center'>
-                            <FormikControl control='input' type='text' label='Addressline 1' name={'address[0]'}/>
-                            <FormikControl control='input' type='text' label='Addressline 2' name={'address[1]'}/>
-                        </Row>
+                        
                         <Row className='mb-3 align-items-center'>
                             <FormikControl control='input' type='text' label='Phonenumber 1' name={'phoneNumbers.phoneNumber1'}/>
                             <FormikControl control='input' type='text' label='Phonenumber 2' name={'phoneNumbers.phoneNumber2'}/>
                         </Row>
 
-                        <Row className='mb-3'>
-                            <FormikControl control='select' name="state" options={States} label="States" />
-                            <FormikControl control='select' name="country" options={Countries} label="Country" />
-                        </Row>
-
-                        <Row className='mb-3'>
-                            <FormikControl control='textarea' name="description" label="Description" />
-                        </Row>
-
-                        <Row className='mb-3'>
-                            <Col sm={6} >
-                                <FormikControl control='date' name="birthDate"  label="Date of birth" />
-                            </Col>
-                            <Col sm={6} >
-                                <FormikControl control='radio' name="modeOfVerification" options={ModeOfVerification} label="Method of verification" />
-                            </Col>
-                        </Row>
+                       
 
 
                         

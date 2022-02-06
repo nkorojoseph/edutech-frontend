@@ -26,15 +26,16 @@ export const States=[
 ]
 
 export const profileValidationSchema = Yup.object({  
-    email: Yup.string().email('Supply valid email').required('Can not be empty'),
-    password: Yup.string().required('Enter valid password')
-    .min(8,'Password must be more than 8 characters')
-    .matches(/[a-zA-Z]/, 'Password must contain only alphabets'),  
+    // email: Yup.string().email('Supply valid email').required('Can not be empty'),
+    // password: Yup.string().required('Enter valid password')
+    // .min(8,'Password must be more than 8 characters')
+    // .matches(/[a-zA-Z]/, 'Password must contain only alphabets'),  
     firstname: Yup.string().required('Required firstname'),
     lastname:Yup.string().required('Required lastname'),
     address:Yup.array().required('Enter at least 1 address line'),
     phoneNumbers: Yup.object({
         phoneNumber1: Yup.string().required('Required'),
     }).required('Can\'t be empty/'),
+    
  
 })
