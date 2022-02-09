@@ -39,3 +39,9 @@ export const profileValidationSchema = Yup.object({
     
  
 })
+
+
+
+//actions
+export const SUBMIT_FORM = 'SUBMIT_FORM'
+

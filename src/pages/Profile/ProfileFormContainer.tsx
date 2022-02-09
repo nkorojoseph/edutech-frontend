@@ -1,17 +1,13 @@
-import { Formik, Form, Field, FieldArray } from 'formik'
-import {useEffect, useState} from 'react'
-import { Row, Button, Col, Container } from 'react-bootstrap';
-import { Countries, States, Medias, profileValidationSchema, ModeOfVerification } from './../../constants/constants';
-import FormikControl from './../../components/FormComponents/FormikControl';
-import ProfileForm from './ProfileForm';
+import { Formik, Form } from 'formik'
+import {useState} from 'react'
+import {  Button, Col, Container } from 'react-bootstrap';
+import {  profileValidationSchema } from './../../constants/constants';
 import ContactInfo from './ContactInfo';
 import PersonInfo from './PersonInfo';
 import OtherInfo from './OtherInfo';
 import { useAuth0 } from '@auth0/auth0-react';
-
-
-
-
+import { profileActions } from './../../store/actions/profileActions';
+import { connect } from 'react-redux';
 
 //fetch from the db
 const savedlValues = {
@@ -29,18 +25,13 @@ const savedlValues = {
    documentURL:''
 }
 
-const onSubmit = (values:any, onSubmitProps:any) => {
-    console.log(values)
-    onSubmitProps.setSubmitting(false)
-    onSubmitProps.resetForm()
-}
+const ProfileFormContainer = (props:any) => {
 
-
-const ProfileFormContainer = ():any => {
+    const {submitForm} = props.submitForm
     
     const {user} = useAuth0()
 
-    const initialValues = {
+    const initiaProfilelValues = {
         email: user?.email,
         password:'',  
         firstname:'',
@@ -69,8 +60,12 @@ const ProfileFormContainer = ():any => {
        return setPage((currPage:any) => currPage - 1)
     }
 
-    
-  
+    const onSubmit = (values:any, onSubmitProps:any) => {
+        console.log()
+        submitForm(values)
+        onSubmitProps.setSubmitting(false)
+        onSubmitProps.resetForm()
+    }
 
     const PageDisplay = () => {
         switch (page) {
@@ -85,13 +80,11 @@ const ProfileFormContainer = ():any => {
         }
     }
 
-  
-
     return (
         <Container>
             <Formik 
-                initialValues= {formValues || initialValues}
-                onSubmit =  {onSubmit}
+                initialValues= {formValues || initiaProfilelValues}
+                onSubmit = {onSubmit}
                 validationSchema = {profileValidationSchema}
                 enableReinitialize
                 validateOnMount
@@ -99,7 +92,8 @@ const ProfileFormContainer = ():any => {
 
                 {
                     (formik:any) => {
-                       
+                       console.log(formik.handleSubmit)
+                       formik.handleSubmit(onSubmit, props)
                         return(
                             <Form>      
                             <div className='header'>
@@ -127,7 +121,7 @@ const ProfileFormContainer = ():any => {
                                 }}
                                 disabled={page == formTitles.length -1}
                                 >Next</Button>
-                                <Button type="submit" className='row' disabled={Object.keys(formik.errors).length > 0}>Submit</Button>
+                                <Button type="submit" className='row' disabled={Object.keys(formik.errors).length > 0} >Submit</Button>
                         </div>
                            
                         </Form>
@@ -143,4 +137,17 @@ const ProfileFormContainer = ():any => {
     )
 }
 
-export default ProfileFormContainer
+const mapStateToProps = (state:any) => {
+    return {
+        
+    }
+}
+
+const matchDispatchToProps = (dispatch:any) => {
+    return {
+        submitForm : (formData:any) => dispatch(profileActions(formData))
+    }
+}
+
+
+export default connect(mapStateToProps, matchDispatchToProps)(ProfileFormContainer)
