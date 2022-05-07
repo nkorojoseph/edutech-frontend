@@ -27,7 +27,7 @@ const savedlValues = {
 
 const ProfileFormContainer = (props:any) => {
 
-    const {submitForm} = props.submitForm
+    
     
     const {user} = useAuth0()
 
@@ -62,7 +62,7 @@ const ProfileFormContainer = (props:any) => {
 
     const onSubmit = (values:any, onSubmitProps:any) => {
         console.log()
-        submitForm(values)
+        
         onSubmitProps.setSubmitting(false)
         onSubmitProps.resetForm()
     }
@@ -92,8 +92,7 @@ const ProfileFormContainer = (props:any) => {
 
                 {
                     (formik:any) => {
-                       console.log(formik.handleSubmit)
-                       formik.handleSubmit(onSubmit, props)
+                     
                         return(
                             <Form>      
                             <div className='header'>

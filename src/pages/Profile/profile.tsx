@@ -4,6 +4,7 @@ import { useAuth0 , withAuthenticationRequired} from '@auth0/auth0-react';
 import Loading from './../../components/loading';
 import ProfileForm from './ProfileForm';
 import ProfileFormContainer from './ProfileFormContainer';
+import ProfileFormx from './ProfileFormx';
 
 const Profile =  ():React.ReactElement => {
   const { user, getAccessTokenSilently } = useAuth0();
@@ -53,7 +54,8 @@ const Profile =  ():React.ReactElement => {
         <section className='about d-flex align-items-center text-light py-5'>
            
                   {/* <ProfileForm/> */}
-                  <ProfileFormContainer/>
+                  {/* <ProfileFormContainer/> */}
+                  <ProfileFormx />
                
         </section>
 
