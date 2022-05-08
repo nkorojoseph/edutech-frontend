@@ -8,7 +8,8 @@ import ProfileFormx from './ProfileFormx';
 
 const Profile =  ():React.ReactElement => {
   const { user, getAccessTokenSilently } = useAuth0();
- { // const [tokenval, setTokenVal] = useState('')
+ { 
+  // const [tokenval, setTokenVal] = useState('')
   // const serverUrl = process.env.REACT_APP_SERVER_URL;
 
   // const name = user?.name
